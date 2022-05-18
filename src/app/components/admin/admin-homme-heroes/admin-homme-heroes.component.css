@@ -1,6 +1,6 @@
 img{
     width: 100px;
-    height: 100px;
+    height: 150px;
     object-fit: cover;
 }
 th, td {
@@ -11,6 +11,30 @@ td{
     text-align: left;
 }
 
-button{
-    margin-right: 1rem;
+.adminNav{
+    position: absolute;
+    top: 300px;
+    right: 200px;
+}
+
+.trash, .update{
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.trash{
+    color: rgb(181, 20, 20);
+    transition: all .25s;
+}
+
+.trash:hover{
+    color: rgb(255, 0, 0);
+}
+
+.update{
+    transition: all .25s;
+}
+
+.update:hover{
+    color: rgb(17, 14, 14);
 }

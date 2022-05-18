@@ -1,0 +1,37 @@
+form{
+    width: 600px;
+}
+
+#goldInput input:last-child{
+    width: 80px !important;
+    margin-left: 1rem;
+}
+
+#goldInput{
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+}
+.form-range::-webkit-slider-thumb {
+ background-color: #2c3e50;
+}
+.form-group{
+   margin-bottom: 1rem;
+}
+
+.formFlex{
+   display: flex;
+}
+.formFlex div{
+ margin-right: 2rem;
+ }
+.formFlex div:last-child{
+ margin-right: 0;
+}
+
+#taille.ng-valid[required], .ng-valid.required, #poids.ng-valid[required], .ng-valid.required, #mental.ng-valid[required], .ng-valid.required, #phyisique.ng-valid[required], .ng-valid.required {
+ border-left: 0; /* green */
+}
+#taille.ng-invalid:not(form), #poids.ng-invalid:not(form), #mental.ng-invalid:not(form), #phyisique.ng-invalid:not(form) {
+ border-left: 0; /* red */
+}

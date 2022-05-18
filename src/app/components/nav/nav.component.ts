@@ -1,6 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { faMoon, faSun } from '@fortawesome/free-solid-svg-icons';
-import { ThemeService } from 'src/app/services/theme.service';
 
 @Component({
   selector: 'app-nav',
@@ -12,14 +11,13 @@ export class NavComponent implements OnInit {
   faSun = faSun;
   faMoon = faMoon;
   theme: string = 'sun';
-  constructor(private ThemeService: ThemeService) { }
+  constructor() { }
 
   ngOnInit(): void {
   }
 
   changeTheme(changeTheme: string) :void {
     this.theme = changeTheme;
-    this.ThemeService.changeTheme(this.theme);
     this.themeEmitter.emit(this.theme);
   }
 }

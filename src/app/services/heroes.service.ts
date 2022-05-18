@@ -95,4 +95,12 @@ export class HeroesService {
   addHeroe(heroe: Heroes) :void {
     this.heroes.push(heroe);
   }
+
+  deleteHeroe(name ?: string) :void {
+    this.heroes = this.heroes.filter(heroe => heroe.name != name);
+  }
+
+  findByName(name : string) :Heroes {
+    return this.heroes.filter(heroe => heroe.name == name)[0]
+   }
 }

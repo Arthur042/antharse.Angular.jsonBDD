@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { faPenToSquare, faPlusCircle, faTrashCan } from '@fortawesome/free-solid-svg-icons';
 import { Heroes } from 'src/app/models/heroes';
 import { HeroesService } from 'src/app/services/heroes.service';
 
@@ -9,9 +10,17 @@ import { HeroesService } from 'src/app/services/heroes.service';
 })
 export class AdminHommeHeroesComponent implements OnInit {
   heroes: Heroes[] = this.HeroesService.heroes;
+  faTrash = faTrashCan;
+  faPen = faPenToSquare;
+  faPlus = faPlusCircle;
   constructor(private HeroesService : HeroesService) { }
   
   ngOnInit(): void {
+  }
+
+  deleteHeroe(name ?: string){
+    this.HeroesService.deleteHeroe(name);
+    this.heroes = this.HeroesService.heroes;
   }
   
 }

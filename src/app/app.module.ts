@@ -23,6 +23,8 @@ import { AdminNewCityComponent } from './components/admin/admin-new-city/admin-n
 import { FormsModule } from '@angular/forms';
 import { AdminNewHeroeComponent } from './components/admin/admin-new-heroe/admin-new-heroe.component';
 import { AdminHommeHeroesComponent } from './components/admin/admin-homme-heroes/admin-homme-heroes.component';
+import { AdminCityUpdateComponent } from './components/admin/admin-city-update/admin-city-update.component';
+import { AdminHeroeUpdateComponent } from './components/admin/admin-heroe-update/admin-heroe-update.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,6 +43,8 @@ import { AdminHommeHeroesComponent } from './components/admin/admin-homme-heroes
     AdminNewCityComponent,
     AdminNewHeroeComponent,
     AdminHommeHeroesComponent,
+    AdminCityUpdateComponent,
+    AdminHeroeUpdateComponent,
   ],
   imports: [
     BrowserModule,

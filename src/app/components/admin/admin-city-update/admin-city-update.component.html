@@ -1,0 +1,51 @@
+<div id="newCityAdd" class="masthead bg-primary text-white">
+    <div class="container d-flex align-items-center flex-column">
+      <!-- Portfolio Section Heading-->
+      <h2 class="page-section-heading text-center text-uppercase text-light mb-0">création d'un lieu</h2>
+      <!-- Icon Divider-->
+      <div class="divider-custom mb-5">
+        <div class="divider-custom-line bg-light"></div>
+        <div class="divider-custom-line bg-light"></div>
+      </div>
+      <form #form="ngForm">
+        <div class="form-group">
+          <label for="lieu">Nom du lieu</label>
+          <input type="text" class="form-control" id="lieu" name="lieu" #nom="ngModel"
+            [(ngModel)]="updateCity.name">
+        </div>
+  
+        <div class="form-group">
+          <label for="url">url de l'image</label>
+          <input type="url" class="form-control" id="url" name="url" #url="ngModel" [(ngModel)]="updateCity.image">
+        </div>
+  
+        <div class="form-group">
+          <label for="select">ville ou lieu important</label>
+          <select class="form-select" id="select">
+            <option [ngValue]="undefined">choisissez un type de lieu</option>
+            <option *ngFor="let type of types" [ngValue]="type"> {{ type }}</option>
+  
+          </select>
+        </div>
+  
+        <div class="form-group">
+          <label for="shortDesc">courte description pour la page d'acceuil</label>
+          <textarea class="form-control" name="shortDesc" id="shortDesc" #shortDesc="ngModel"
+            [(ngModel)]="updateCity.shortDesc" rows="3"></textarea>
+        </div>
+  
+        <div class="form-group">
+          <label for="longDesc">Description complète </label>
+          <textarea class="form-control" name="longDesc" id="longDesc" #longDesc="ngModel"
+            [(ngModel)]="updateCity.longDesc" rows="3"></textarea>
+        </div>
+  
+        <button [disabled]="!form.valid" (click)="updatePLace()" type="submit" class="btn btn-secondary mt-4">Modifier le
+          lieu</button>
+  
+      </form>
+    </div>
+  </div>
+  <app-footer></app-footer>
+  <app-coopyright></app-coopyright>
+  

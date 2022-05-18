@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { faPenToSquare, faTrashCan } from '@fortawesome/free-solid-svg-icons';
 import { Citys } from 'src/app/models/citys';
 import { CitysService } from 'src/app/services/citys.service';
 
@@ -9,9 +10,15 @@ import { CitysService } from 'src/app/services/citys.service';
 })
 export class AdminHomeComponent implements OnInit {
   citys: Citys[] = this.CitysService.citys;
+  faTrash = faTrashCan;
+  faPen = faPenToSquare;
   constructor(private CitysService : CitysService) { }
 
   ngOnInit(): void {
   }
 
+  deletecity(id ?: number){
+    this.CitysService.deleteCity(id);
+    this.citys = this.CitysService.citys;
+  }
 }

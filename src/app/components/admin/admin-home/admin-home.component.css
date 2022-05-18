@@ -11,6 +11,24 @@ td{
     text-align: left;
 }
 
-button{
-    margin-right: 1rem;
+.trash, .update{
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.trash{
+    color: rgb(181, 20, 20);
+    transition: all .25s;
+}
+
+.trash:hover{
+    color: rgb(255, 0, 0);
+}
+
+.update{
+    transition: all .25s;
+}
+
+.update:hover{
+    color: rgb(17, 14, 14);
 }

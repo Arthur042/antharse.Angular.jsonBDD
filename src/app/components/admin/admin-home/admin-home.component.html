@@ -27,6 +27,8 @@
                 <td><img src="{{ city.image }}" alt="photo miniature de {{ city.image }}"></td>
                 <td>{{ city.shortDesc }}</td>
                 <td>{{ city.longDesc }}</td>
+                <td (click)="deletecity(city.id)"><fa-icon [icon]="faTrash" class="trash py-3 px-0 px-lg-3 rounded"></fa-icon></td>
+                <td [routerLink]="['/admin/citys/update/', city.id]"><fa-icon [icon]="faPen" class="update py-3 px-0 px-lg-3 rounded"></fa-icon></td>
               </tr>
             </tbody>
           </table>

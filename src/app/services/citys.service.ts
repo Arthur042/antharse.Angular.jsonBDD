@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Citys } from '../models/citys';
 
 @Injectable({
@@ -12,7 +13,8 @@ export class CitysService {
         name : 'Helir',
         image : '../../../../assets/city/helir.jpg',
         shortDesc: `Helir est la capital d'Antharse, il s'agit du coeur de tous les marchés de la région.`,
-        longDesc: `Helir est la capital d'Antharse, le roi ses généraux et le ministre de la magie s'y trouve. Il s'agit du coeur de tous les marchés de la région. C'est égalemet à hélir que nos aventuriers vont se retourver engagé par le roi pour la quête des orbes.`
+        longDesc: `Helir est la capital d'Antharse, le roi ses généraux et le ministre de la magie s'y trouve. Il s'agit du coeur de tous les marchés de la région. C'est égalemet à hélir que nos aventuriers vont se retourver engagé par le roi pour la quête des orbes.`,
+        type: 'ville'
     },
     {
         id : 2,
@@ -66,5 +68,9 @@ export class CitysService {
 
   findById(id: number) :Citys {
    return this.citys.filter(city => city.id == id)[0]
+  }
+
+  deleteCity(id ?: number): void{
+    this.citys = this.citys.filter(city => city.id != id)
   }
 }
