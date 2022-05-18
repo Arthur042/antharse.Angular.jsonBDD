@@ -1,143 +1,170 @@
 <div id="newCityAdd" class="masthead bg-primary text-white">
-    <div class="container d-flex align-items-center flex-column">
-        <form #form="ngForm" (submit)="addHeroe()">
-
-            <div class="formFlex">
-                <!-- input name text -->
-                <div class="form-group">
-                    <label for="name">Nom du personnage</label>
-                    <input type="text" id="name" name="name" required class="form-control" [(ngModel)]="newHeroe.name" #name="ngModel">
-                </div>
-                <!-- input race text -->
-                <div class="form-group">
-                    <label for="race">Race</label>
-                    <input type="text" id="race" name="race" required class="form-control" [(ngModel)]="newHeroe.race" #race="ngModel">
-                </div>
-                <!-- input classe text -->
-                <div class="form-group">
-                    <label for="classe">classe</label>
-                    <input type="text" id="classe" name="classe" required class="form-control" [(ngModel)]="newHeroe.classe" #classe="ngModel">
-                </div>
-            </div>
-            
-            <!-- input image text -->
-            <div class="form-group">
-                <label for="image"> URL de l'image</label>
-                <input type="text" id="image" name="image" required class="form-control" [(ngModel)]="newHeroe.image" #image="ngModel">
-            </div>
-
-            <!-- input range taille -->
-            <div class="form-group">
-                <label for="taille">Taille </label>
-                <div id="goldInput">
-                    <input class="form-range" id="taille" name="taille" type="range" [(ngModel)]="newHeroe.taille" min="0" max="4" step="0.01">
-                    <input class="form-control" required type="number" name="taille" #piece="ngModel" [(ngModel)]="newHeroe.taille" >
-                </div>
-            </div>
-
-            <!-- input range poids -->
-            <div class="form-group">
-                <label for="poids">Poids </label>
-                <div id="goldInput">
-                    <input class="form-range" id="poids" name="poids" type="range" [(ngModel)]="newHeroe.poids" min="0" max="300">
-                    <input class="form-control" required type="number" name="poids" #piece="ngModel" [(ngModel)]="newHeroe.poids" >
-                </div>
-            </div>
-
-            <div class="formFlex">
-                <!-- input age text -->
-                <div class="form-group">
-                    <label for="age">Age</label>
-                    <input type="number" id="age" name="age" required class="form-control" [(ngModel)]="newHeroe.age" #age="ngModel">
-                </div>
-                <!-- input level text -->
-                <div class="form-group">
-                    <label for="level">Niveau</label>
-                    <input type="number" id="level" name="level" required class="form-control" [(ngModel)]="newHeroe.level" #level="ngModel">
-                </div>
-                <!-- input life text -->
-                <div class="form-group">
-                    <label for="life">Point de vie</label>
-                    <input type="number" id="life" name="life" required class="form-control" [(ngModel)]="newHeroe.life" #life="ngModel">
-                </div>
-                <!-- input mana text -->
-                <div class="form-group">
-                    <label for="mana">Point de magie</label>
-                    <input type="number" id="mana" name="mana" required class="form-control" [(ngModel)]="newHeroe.mana" #mana="ngModel">
-                </div>
-            </div>
-
-            <!-- input range physique -->
-            <div class="form-group">
-                <label for="phyisique">Physique</label>
-                <div id="goldInput">
-                    <input class="form-range" id="phyisique" name="phyisique" type="range" [(ngModel)]="newHeroe.phyisique" min="0" max="100">
-                    <input class="form-control" required type="number" name="phyisique" #piece="ngModel" [(ngModel)]="newHeroe.phyisique" >
-                </div>
-            </div>
-
-            <!-- input range mental -->
-            <div class="form-group">
-                <label for="mental">Mental</label>
-                <div id="goldInput">
-                    <input class="form-range" id="mental" name="mental" type="range" [(ngModel)]="newHeroe.mental" min="0" max="100">
-                    <input class="form-control" required type="number" name="mental" #piece="ngModel" [(ngModel)]="newHeroe.mental" >
-                </div>
-            </div>
-
-            
-            <!-- input equipement1 text -->
-            <div class="form-group">
-                <label for="equipmment_1">Equipement n°1</label>
-                <textarea type="text" id="equipmment_1" name="equipmment_1" class="form-control" [(ngModel)]="newHeroe.equipmment_1" #equipmment_1="ngModel"></textarea>
-            </div>
-
-            
-            <!-- input equipement2 text -->
-            <div class="form-group">
-                <label for="equipmment_2">Equipement n°2</label>
-                <textarea type="text" id="equipmment_2" name="equipmment_2" class="form-control" [(ngModel)]="newHeroe.equipmment_2" #equipmment_2="ngModel"></textarea>
-            </div>
-
-            
-            <!-- input equipement3 text -->
-            <div class="form-group">
-                <label for="equipmment_3">Equipement n°3</label>
-                <textarea type="text" id="equipmment_3" name="equipmment_3" class="form-control" [(ngModel)]="newHeroe.equipmment_3" #equipmment_3="ngModel"></textarea>
-            </div>
-
-            
-            <!-- input equipement4 text -->
-            <div class="form-group">
-                <label for="equipmment_4">Equipement n°4</label>
-                <textarea type="text" id="equipmment_4" name="equipmment_4" class="form-control" [(ngModel)]="newHeroe.equipmment_4" #equipmment_4="ngModel"></textarea>
-            </div>
-
-            <!-- input equipement5 text -->
-            <div class="form-group">
-                <label for="equipmment_5">Equipement n°5</label>
-                <textarea type="text" id="equipmment_5" name="equipmment_5" class="form-control" [(ngModel)]="newHeroe.equipmment_5" #equipmment_5="ngModel"></textarea>
-            </div>
-
-            <!-- input range piece -->
-            <div class="form-group">
-                <label for="gold">nombre de piece</label>
-                <div id="goldInput">
-                    <input class="form-range" id="gold" name="gold" type="range" [(ngModel)]="newHeroe.piece" min="0" max="500">
-                    <input class="form-control" type="number" name="gold" #piece="ngModel" [(ngModel)]="newHeroe.piece" >
-                </div>
-            </div>
-
-            <!-- input background text -->
-            <div class="form-group">
-                <label for="history">Background</label>
-                <textarea type="text" id="history" name="history" class="form-control" [(ngModel)]="newHeroe.history" #history="ngModel"></textarea>
-            </div>
-
-            <button [disabled]="!form.valid" type="submit" class="btn btn-secondary mt-4">Ajouter le personnage</button>
-
-          </form>
+  <div class="container d-flex align-items-center flex-column">
+    <!-- Portfolio Section Heading-->
+    <h2 class="page-section-heading text-center text-uppercase text-light mb-0">Création d'un personnage</h2>
+    <!-- Icon Divider-->
+    <div class="divider-custom mb-5">
+      <div class="divider-custom-line bg-light"></div>
+      <div class="divider-custom-line bg-light"></div>
     </div>
+    <form #form="ngForm" (submit)="addHeroe()">
+
+      <div class="formFlex">
+        <!-- input name text -->
+        <div class="form-group">
+          <label for="name">Nom du personnage</label>
+          <input type="text" id="name" name="name" required class="form-control" [(ngModel)]="newHeroe.name"
+            #name="ngModel">
+        </div>
+        <!-- input race text -->
+        <div class="form-group">
+          <label for="race">Race</label>
+          <input type="text" id="race" name="race" required class="form-control" [(ngModel)]="newHeroe.race"
+            #race="ngModel">
+        </div>
+        <!-- input classe text -->
+        <div class="form-group">
+          <label for="classe">classe</label>
+          <input type="text" id="classe" name="classe" required class="form-control" [(ngModel)]="newHeroe.classe"
+            #classe="ngModel">
+        </div>
+      </div>
+
+      <!-- input image text -->
+      <div class="form-group">
+        <label for="image"> URL de l'image</label>
+        <input type="text" id="image" name="image" required class="form-control" [(ngModel)]="newHeroe.image"
+          #image="ngModel">
+      </div>
+
+      <!-- input range taille -->
+      <div class="form-group">
+        <label for="taille">Taille </label>
+        <div id="goldInput">
+          <input class="form-range" id="taille" name="taille" type="range" [(ngModel)]="newHeroe.taille" min="0" max="4"
+            step="0.01">
+          <input class="form-control" required type="number" name="taille" #piece="ngModel"
+            [(ngModel)]="newHeroe.taille">
+        </div>
+      </div>
+
+      <!-- input range poids -->
+      <div class="form-group">
+        <label for="poids">Poids </label>
+        <div id="goldInput">
+          <input class="form-range" id="poids" name="poids" type="range" [(ngModel)]="newHeroe.poids" min="0" max="300">
+          <input class="form-control" required type="number" name="poids" #piece="ngModel" [(ngModel)]="newHeroe.poids">
+        </div>
+      </div>
+
+      <div class="formFlex">
+        <!-- input age text -->
+        <div class="form-group">
+          <label for="age">Age</label>
+          <input type="number" id="age" name="age" required class="form-control" [(ngModel)]="newHeroe.age"
+            #age="ngModel">
+        </div>
+        <!-- input level text -->
+        <div class="form-group">
+          <label for="level">Niveau</label>
+          <input type="number" id="level" name="level" required class="form-control" [(ngModel)]="newHeroe.level"
+            #level="ngModel">
+        </div>
+        <!-- input life text -->
+        <div class="form-group">
+          <label for="life">Point de vie</label>
+          <input type="number" id="life" name="life" required class="form-control" [(ngModel)]="newHeroe.life"
+            #life="ngModel">
+        </div>
+        <!-- input mana text -->
+        <div class="form-group">
+          <label for="mana">Point de magie</label>
+          <input type="number" id="mana" name="mana" required class="form-control" [(ngModel)]="newHeroe.mana"
+            #mana="ngModel">
+        </div>
+      </div>
+
+      <!-- input range physique -->
+      <div class="form-group">
+        <label for="phyisique">Physique</label>
+        <div id="goldInput">
+          <input class="form-range" id="phyisique" name="phyisique" type="range" [(ngModel)]="newHeroe.phyisique"
+            min="0" max="100">
+          <input class="form-control" required type="number" name="phyisique" #piece="ngModel"
+            [(ngModel)]="newHeroe.phyisique">
+        </div>
+      </div>
+
+      <!-- input range mental -->
+      <div class="form-group">
+        <label for="mental">Mental</label>
+        <div id="goldInput">
+          <input class="form-range" id="mental" name="mental" type="range" [(ngModel)]="newHeroe.mental" min="0"
+            max="100">
+          <input class="form-control" required type="number" name="mental" #piece="ngModel"
+            [(ngModel)]="newHeroe.mental">
+        </div>
+      </div>
+
+
+      <!-- input equipement1 text -->
+      <div class="form-group">
+        <label for="equipmment_1">Equipement n°1</label>
+        <textarea type="text" id="equipmment_1" name="equipmment_1" class="form-control"
+          [(ngModel)]="newHeroe.equipmment_1" #equipmment_1="ngModel"></textarea>
+      </div>
+
+
+      <!-- input equipement2 text -->
+      <div class="form-group">
+        <label for="equipmment_2">Equipement n°2</label>
+        <textarea type="text" id="equipmment_2" name="equipmment_2" class="form-control"
+          [(ngModel)]="newHeroe.equipmment_2" #equipmment_2="ngModel"></textarea>
+      </div>
+
+
+      <!-- input equipement3 text -->
+      <div class="form-group">
+        <label for="equipmment_3">Equipement n°3</label>
+        <textarea type="text" id="equipmment_3" name="equipmment_3" class="form-control"
+          [(ngModel)]="newHeroe.equipmment_3" #equipmment_3="ngModel"></textarea>
+      </div>
+
+
+      <!-- input equipement4 text -->
+      <div class="form-group">
+        <label for="equipmment_4">Equipement n°4</label>
+        <textarea type="text" id="equipmment_4" name="equipmment_4" class="form-control"
+          [(ngModel)]="newHeroe.equipmment_4" #equipmment_4="ngModel"></textarea>
+      </div>
+
+      <!-- input equipement5 text -->
+      <div class="form-group">
+        <label for="equipmment_5">Equipement n°5</label>
+        <textarea type="text" id="equipmment_5" name="equipmment_5" class="form-control"
+          [(ngModel)]="newHeroe.equipmment_5" #equipmment_5="ngModel"></textarea>
+      </div>
+
+      <!-- input range piece -->
+      <div class="form-group">
+        <label for="gold">nombre de piece</label>
+        <div id="goldInput">
+          <input class="form-range" id="gold" name="gold" type="range" [(ngModel)]="newHeroe.piece" min="0" max="500">
+          <input class="form-control" type="number" name="gold" #piece="ngModel" [(ngModel)]="newHeroe.piece">
+        </div>
+      </div>
+
+      <!-- input background text -->
+      <div class="form-group">
+        <label for="history">Background</label>
+        <textarea type="text" id="history" name="history" class="form-control" [(ngModel)]="newHeroe.history"
+          #history="ngModel"></textarea>
+      </div>
+
+      <button [disabled]="!form.valid" type="submit" class="btn btn-secondary mt-4">Ajouter le personnage</button>
+
+    </form>
+  </div>
 </div>
 <app-footer></app-footer>
 <app-coopyright></app-coopyright>
