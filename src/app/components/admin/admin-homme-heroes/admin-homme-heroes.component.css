@@ -1,0 +1,16 @@
+img{
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+th, td {
+    vertical-align: middle;
+}
+
+td{
+    text-align: left;
+}
+
+button{
+    margin-right: 1rem;
+}

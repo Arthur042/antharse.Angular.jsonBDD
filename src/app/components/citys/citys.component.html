@@ -1,0 +1,25 @@
+<section class="page-section" id="contact">
+    <div class="container">
+        
+      <!-- Portfolio Section Heading-->
+      <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Villes</h2>
+      <!-- Icon Divider-->
+      <div class="divider-custom">
+          <div class="divider-custom-line"></div>
+          <div class="divider-custom-line"></div>
+      </div>
+
+        <div class="row">
+          <div id="card" class="card m-4 col-3" *ngFor="let city of citys">
+              <img src="{{city.image}}" class="card-img-top" alt="photo de {{city.name}}">
+              <div class="card-body">
+                <h5 class="card-title">{{city.name}}</h5>
+                <p class="card-text">{{city.shortDesc}}</p>
+                <a [routerLink]="['/city', city.id]" class="btn btn-primary">En savoir plus</a>
+              </div>
+          </div>
+
+        </div>
+          
+    </div>
+</section>

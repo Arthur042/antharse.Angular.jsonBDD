@@ -1,0 +1,36 @@
+<div id="admin" class="masthead bg-primary text-center">
+  
+  <!-- Portfolio Section Heading-->
+  <h2 class="page-section-heading text-center text-uppercase text-light mb-0">Liste des villes</h2>
+  <!-- Icon Divider-->
+  <div class="divider-custom mb-5">
+    <div class="divider-custom-line bg-light"></div>
+    <div class="divider-custom-line bg-light"></div>
+  </div>
+  <div id="adminNav" class="mb-3">
+    <button class="btn btn-secondary mb-3" [routerLink]="['/admin/citys/add']">ajouter une ville</button>
+  </div>
+
+    <div class="container d-flex align-items-center flex-column  text-center">
+        <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">Ville</th>
+                <th scope="col">image</th>
+                <th scope="col">description courte</th>
+                <th scope="col">description longue</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let city of citys">
+                <th scope="row">{{ city.name }}</th>
+                <td><img src="{{ city.image }}" alt="photo miniature de {{ city.image }}"></td>
+                <td>{{ city.shortDesc }}</td>
+                <td>{{ city.longDesc }}</td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+</div>
+<app-footer></app-footer>
+<app-coopyright></app-coopyright>

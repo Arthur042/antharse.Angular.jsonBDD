@@ -1,0 +1,26 @@
+<div class="row">
+    <div class="col-md-6 col-lg-4 mb-5">
+        <a href="#about" class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal1" (click)="showItems(heroe)">
+            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                <div class="portfolio-item-caption-content text-center text-dark">Afficher les objets</div>
+            </div>
+            <img class="img-fluid" src="{{heroe.image}}" alt="image de {{heroe.name}}" />
+        </a>
+    </div>
+    <div class="col-md-6 col-lg-4 mb-5">
+        <h1 class="text-info">{{heroe.name}}</h1>
+        <p>{{heroe.history}}</p>
+        <ul>
+            <li>race : {{heroe.race}}</li>
+            <li>Classe : {{heroe.classe}}</li>
+            <li>Taille : {{heroe.taille}}m</li>
+            <li>poids : {{heroe.poids}}kg</li>
+            <li>Age : {{heroe.age}}ans</li>
+            <li>Niveau : {{heroe.level}}</li>
+            <li>Vie : {{heroe.life}}PV</li>
+            <li>Psy : {{heroe.mana}}</li>
+            <li>Physique : {{heroe.phyisique}}%</li>
+            <li>Mental : {{heroe.mental}}%</li>
+        </ul>
+    </div>
+</div>

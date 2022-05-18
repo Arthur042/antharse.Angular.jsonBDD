@@ -1,0 +1,25 @@
+<nav [ngClass]="{'bg-dark' : theme === 'moon'}" class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
+    <div class="container">
+        <div [routerLink]="['/']"><a class="navbar-brand" href="#page-top">Les Terres d'Antharse</a></div>
+        <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            Menu
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ms-auto">
+                <li [routerLink]="['/']" class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#portfolio">Personnage</a></li>
+                <li [routerLink]="['/']" class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#about">Items</a></li>
+                <li [routerLink]="['/']" class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#contact">Villes</a></li>
+                <li ngbDropdown class="nav-item mx-0 mx-lg-1 text-light">
+                    <p class="text-light py-3 px-0 px-lg-3 rounded" id="dropdownBasic1" ngbDropdownToggle>Administration</p>
+                    <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                      <button ngbDropdownItem [routerLink]="['/admin/citys']">Gestions des villes</button>
+                      <button ngbDropdownItem [routerLink]="['/admin/heroes']">Gestions des personnages</button>
+                    </div>
+                </li>
+                <li (click)="changeTheme('moon')" *ngIf="theme == 'sun'" class="nav-item mx-0 mx-lg-1"><fa-icon [icon]="faMoon" class="nav-link py-3 px-0 px-lg-3 rounded"></fa-icon></li>
+                <li (click)="changeTheme('sun')" *ngIf="theme == 'moon'" class="nav-item mx-0 mx-lg-1"><fa-icon [icon]="faSun" class="nav-link py-3 px-0 px-lg-3 rounded"></fa-icon></li>
+            </ul>
+        </div>
+    </div>
+</nav>

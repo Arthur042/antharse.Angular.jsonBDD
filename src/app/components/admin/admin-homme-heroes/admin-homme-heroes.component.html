@@ -1,0 +1,40 @@
+<div id="admin" class="masthead bg-primary text-center">
+  
+    <!-- Portfolio Section Heading-->
+    <h2 class="page-section-heading text-center text-uppercase text-light mb-0">Liste des personnages</h2>
+    <!-- Icon Divider-->
+    <div class="divider-custom mb-5">
+      <div class="divider-custom-line bg-light"></div>
+      <div class="divider-custom-line bg-light"></div>
+    </div>
+    <div id="adminNav" class="mb-3">
+      <button class="btn btn-secondary mb-3" [routerLink]="['/admin/heroe/add']">ajouter un personnage</button>
+    </div>
+  
+      <div class="container d-flex align-items-center flex-column  text-center">
+          <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th scope="col">Nom</th>
+                  <th scope="col">Image</th>
+                  <th scope="col">Race/Classe</th>
+                  <th scope="col">Caractéritique</th>
+                  <th scope="col">Statistique</th>
+                  <th scope="col">Equipement</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let heroe of heroes">
+                  <th scope="row">{{ heroe.name }}</th>
+                  <td><img src="{{ heroe.image }}" alt="photo miniature de {{ heroe.name }}"></td>
+                  <td>Race : {{ heroe.race }} <br>Classe : {{ heroe.classe }}</td>
+                  <td>Taille : {{ heroe.race }} <br>Poids : {{ heroe.race }} <br>Age : {{ heroe.race }} <br>Niveau : {{ heroe.level }}</td>
+                  <td>Vie : {{ heroe.life }} <br>Mana : {{ heroe.mana }} <br>Physique : {{ heroe.phyisique }} <br>Mental : {{ heroe.mental }}</td>
+                  <td> - {{ heroe.equipmment_1 }} <br> -{{ heroe.equipmment_2 }} <br> - {{ heroe.equipmment_3 }} <br> - {{ heroe.equipmment_4 }} <br> - {{ heroe.equipmment_5 }}</td>
+                </tr>
+              </tbody>
+            </table>
+      </div>
+  </div>
+  <app-footer></app-footer>
+  <app-coopyright></app-coopyright>

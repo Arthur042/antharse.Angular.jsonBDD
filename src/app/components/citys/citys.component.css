@@ -1,0 +1,19 @@
+.row{
+    display: flex;
+    justify-content: center;
+}
+.card{
+    padding: 0 !important;
+}
+img{
+    width: 326px;
+    height: 246px;
+    object-fit: cover;
+}
+
+.card-body{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+}

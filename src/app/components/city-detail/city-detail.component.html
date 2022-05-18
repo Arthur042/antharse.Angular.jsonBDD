@@ -1,0 +1,17 @@
+<div id="cityDetail" class="masthead bg-primary text-white text-center">
+    <div class="container d-flex align-items-center flex-column">
+        <!-- Masthead Heading-->
+        <h1 class="masthead-heading text-uppercase mb-0">{{ cityDisplay.name }}</h1>
+        <!-- Icon Divider-->
+        <div class="divider-custom divider-light">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-line"></div>
+        </div>
+        <!-- Masthead Avatar Image-->
+        <img class=" mb-5" src="{{ cityDisplay.image }}" alt="photo de {{cityDisplay.name}}" />
+        <!-- Masthead Subheading-->
+        <p class="masthead-subheading font-weight-light mb-0">{{ cityDisplay.longDesc }}</p>
+    </div>
+</div>
+<app-footer [theme]="newTheme"></app-footer>
+<app-coopyright [theme]="newTheme"></app-coopyright>
