@@ -9,18 +9,20 @@ import { HeroesService } from 'src/app/services/heroes.service';
   styleUrls: ['./admin-homme-heroes.component.css']
 })
 export class AdminHommeHeroesComponent implements OnInit {
-  heroes: Heroes[] = this.HeroesService.heroes;
+  heroes !: Heroes[];
   faTrash = faTrashCan;
   faPen = faPenToSquare;
   faPlus = faPlusCircle;
   constructor(private HeroesService : HeroesService) { }
   
   ngOnInit(): void {
+    this.HeroesService.findAllHeroes().subscribe(data => {
+      this.heroes = data;
+    })
   }
 
-  deleteHeroe(name ?: string){
-    this.HeroesService.deleteHeroe(name);
-    this.heroes = this.HeroesService.heroes;
+  deleteHeroe(id ?: number){
+    this.HeroesService.deleteHeroe(id);
   }
   
 }

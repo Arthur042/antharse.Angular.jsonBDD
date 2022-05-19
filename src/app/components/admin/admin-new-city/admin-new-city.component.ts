@@ -19,10 +19,11 @@ export class AdminNewCityComponent implements OnInit {
   }
 
   addPlace():void {
-    this.newCity.id = Date.now()
-    this.CitysService.addCitys(this.newCity);
-    this.router.navigate(['/admin/citys']);
-    this.toastr.success(`${this.newCity.name} à été enregistré avec succès`);
+    this.CitysService.addCitys(this.newCity).subscribe(data => {
+      this.router.navigate(['/admin/citys']);
+      this.toastr.success(`${this.newCity.name} à été enregistré avec succès`);
+    });
+ 
   }
 
 }

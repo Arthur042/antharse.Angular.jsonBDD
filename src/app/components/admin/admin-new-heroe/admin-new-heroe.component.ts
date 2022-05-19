@@ -10,7 +10,7 @@ import { HeroesService } from 'src/app/services/heroes.service';
   styleUrls: ['./admin-new-heroe.component.css']
 })
 export class AdminNewHeroeComponent implements OnInit {
-  newHeroe = new Heroes();
+  newHeroe!: Heroes;
 
   constructor(private router : Router, private toastr: ToastrService, private HeroesService : HeroesService) { }
 

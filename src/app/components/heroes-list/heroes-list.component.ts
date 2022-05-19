@@ -8,12 +8,16 @@ import { HeroesService } from 'src/app/services/heroes.service';
   styleUrls: ['./heroes-list.component.css']
 })
 export class HeroesListComponent implements OnInit {
-  heroes: Heroes[] = this.HeroesService.heroes;
+  heroes !: Heroes[];
+
   @Output() nameEmitter: EventEmitter<Heroes> = new EventEmitter<Heroes>();
   @Input() theme !: string;
   constructor(private HeroesService : HeroesService) { }
 
   ngOnInit(): void {
+    this.HeroesService.findAllHeroes().subscribe(data => {
+      this.heroes = data;
+    })
   }
 
   name($event: Heroes){

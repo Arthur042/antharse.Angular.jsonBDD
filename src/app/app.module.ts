@@ -25,6 +25,7 @@ import { AdminNewHeroeComponent } from './components/admin/admin-new-heroe/admin
 import { AdminHommeHeroesComponent } from './components/admin/admin-homme-heroes/admin-homme-heroes.component';
 import { AdminCityUpdateComponent } from './components/admin/admin-city-update/admin-city-update.component';
 import { AdminHeroeUpdateComponent } from './components/admin/admin-heroe-update/admin-heroe-update.component';
+import {HttpClientModule} from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -58,6 +59,7 @@ import { AdminHeroeUpdateComponent } from './components/admin/admin-heroe-update
     }),
     FontAwesomeModule,
     FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

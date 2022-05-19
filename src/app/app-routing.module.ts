@@ -17,7 +17,7 @@ const routes: Routes = [
   {path: 'admin/citys/add', component: AdminNewCityComponent},
   {path: 'admin/heroe/add', component: AdminNewHeroeComponent},
   {path: 'admin/citys/update/:id', component: AdminCityUpdateComponent},
-  {path: 'admin/heroes/update/:name', component: AdminHeroeUpdateComponent}
+  {path: 'admin/heroes/update/:id', component: AdminHeroeUpdateComponent}
 ];
 
 @NgModule({

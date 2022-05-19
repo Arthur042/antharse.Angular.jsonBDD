@@ -1,4 +1,5 @@
 export class Heroes {
+    id: number;
     image?: string;
     name?: string;
     history?: string;
@@ -19,7 +20,8 @@ export class Heroes {
     equipmment_5?: string;
     piece?: number;
 
-    constructor(image?: string, name?: string, history?: string, race?: string, classe?: string, taille?: number, poids?: number, age?: number, level?: number, life?: number, mana?: number, phyisique?: number, mental?: number,equipmment_1?: string,equipmment_2?: string, equipmment_3?: string,equipmment_4?: string, equipmment_5?: string,piece?: number){
+    constructor(id: number, image?: string, name?: string, history?: string, race?: string, classe?: string, taille?: number, poids?: number, age?: number, level?: number, life?: number, mana?: number, phyisique?: number, mental?: number,equipmment_1?: string,equipmment_2?: string, equipmment_3?: string,equipmment_4?: string, equipmment_5?: string,piece?: number){
+        this.id = id;
         this.image = image;
         this.name = name;
         this.history = history;

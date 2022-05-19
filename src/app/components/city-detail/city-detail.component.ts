@@ -9,7 +9,6 @@ import { CitysService } from 'src/app/services/citys.service';
   styleUrls: ['./city-detail.component.css']
 })
 export class CityDetailComponent implements OnInit {
-  citys : Citys[] = this.CitysService.citys;
   id !: number;
   cityDisplay !: Citys;
   newTheme!: string;
@@ -18,7 +17,9 @@ export class CityDetailComponent implements OnInit {
 
   ngOnInit(): void {
     this.id = parseInt(<string>this.activatedRoute.snapshot.paramMap.get('id'))
-    this.cityDisplay = this.CitysService.findById(this.id);
+    this.CitysService.findById(this.id).subscribe(data => {
+      this.cityDisplay = data
+    });
   }
 
 }

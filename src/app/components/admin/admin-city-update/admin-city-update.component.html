@@ -1,4 +1,7 @@
-<div id="newCityAdd" class="masthead bg-primary text-white">
+<div *ngIf="!updateCity">
+  <h2>chargement de la page en cours</h2>
+</div>
+<div *ngIf="updateCity" id="newCityAdd" class="masthead bg-primary text-white">
     <div class="container d-flex align-items-center flex-column">
       <!-- Portfolio Section Heading-->
       <h2 class="page-section-heading text-center text-uppercase text-light mb-0">création d'un lieu</h2>
@@ -7,7 +10,8 @@
         <div class="divider-custom-line bg-light"></div>
         <div class="divider-custom-line bg-light"></div>
       </div>
-      <form #form="ngForm">
+
+      <form #form="ngForm" (submit)="updatePLace()">
         <div class="form-group">
           <label for="lieu">Nom du lieu</label>
           <input type="text" class="form-control" id="lieu" name="lieu" #nom="ngModel"
@@ -40,7 +44,7 @@
             [(ngModel)]="updateCity.longDesc" rows="3"></textarea>
         </div>
   
-        <button [disabled]="!form.valid" (click)="updatePLace()" type="submit" class="btn btn-secondary mt-4">Modifier le
+        <button [disabled]="!form.valid" type="submit" class="btn btn-secondary mt-4">Modifier le
           lieu</button>
   
       </form>

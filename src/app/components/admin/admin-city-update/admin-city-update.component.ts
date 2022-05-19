@@ -18,12 +18,17 @@ export class AdminCityUpdateComponent implements OnInit {
 
   ngOnInit(): void {
     this.id = parseInt(<string>this.ActivatedRoute.snapshot.paramMap.get('id'))
-    this.updateCity = this.CitysService.findById(this.id);
+    this.CitysService.findById(this.id).subscribe(data => {
+      this.updateCity = data;
+    })
+    
   }
 
   updatePLace(){
-    this.router.navigate(['/admin/citys']);
-    this.toastr.success(`${this.updateCity.name} à été modifié avec succès`);
+    this.CitysService.updateCity(this.updateCity).subscribe(data => {
+      this.router.navigate(['/admin/citys']);
+      this.toastr.success(`${this.updateCity.name} à été modifié avec succès`);
+    })
   }
 
 }

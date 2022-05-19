@@ -10,7 +10,12 @@
         <!-- Portfolio Grid Items-->
         <div class="row justify-content-center">
             <!-- Portfolio Item 1-->
-            <app-heroe *ngFor="let heroe of heroes" [heroe]="heroe" [theme]="theme" (nameEmitter)="name($event)" ></app-heroe>
+            <div *ngIf="!heroes">
+                <h2>personnages en cours de chargement</h2>
+            </div>
+            <div *ngIf="heroes">
+                <app-heroe *ngFor="let heroe of heroes" [heroe]="heroe" [theme]="theme" (nameEmitter)="name($event)" ></app-heroe>
+            </div>
         </div>
     </div>
 </section>

@@ -1,4 +1,7 @@
-<div id="newCityAdd" class="masthead bg-primary text-white">
+<div *ngIf="!updateHeroe">
+  <h2>chargement de la page en cours</h2>
+</div>
+<div *ngIf="updateHeroe" id="newCityAdd" class="masthead bg-primary text-white">
     <div class="container d-flex align-items-center flex-column">
       <!-- Portfolio Section Heading-->
       <h2 class="page-section-heading text-center text-uppercase text-light mb-0">Création d'un personnage</h2>

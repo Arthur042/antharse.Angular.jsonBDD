@@ -1,4 +1,7 @@
-<div id="cityDetail" class="masthead bg-primary text-white text-center">
+<div *ngIf="!cityDisplay">
+    <h2>chargement de la page en cours</h2>
+</div>
+<div *ngIf="cityDisplay" id="cityDetail" class="masthead bg-primary text-white text-center">
     <div class="container d-flex align-items-center flex-column">
         <!-- Masthead Heading-->
         <h1 class="masthead-heading text-uppercase mb-0">{{ cityDisplay.name }}</h1>

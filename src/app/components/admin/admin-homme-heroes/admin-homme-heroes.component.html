@@ -31,8 +31,8 @@
                   <td>Taille : {{ heroe.taille }} m <br>Poids : {{ heroe.poids }} kg <br>Age : {{ heroe.age }} ans <br>Niveau : {{ heroe.level }}</td>
                   <td>Vie : {{ heroe.life }} <br>Mana : {{ heroe.mana }} <br>Physique : {{ heroe.phyisique }} <br>Mental : {{ heroe.mental }}</td>
                   <td> - {{ heroe.equipmment_1 }} <br> -{{ heroe.equipmment_2 }} <br> - {{ heroe.equipmment_3 }} <br> - {{ heroe.equipmment_4 }} <br> - {{ heroe.equipmment_5 }}</td>
-                  <td (click)="deleteHeroe(heroe.name)"><fa-icon [icon]="faTrash" class="trash py-3 px-0 px-lg-3 rounded"></fa-icon></td>
-                <td [routerLink]="['/admin/heroes/update/', heroe.name]"><fa-icon [icon]="faPen" class="update py-3 px-0 px-lg-3 rounded"></fa-icon></td>
+                  <td (click)="deleteHeroe(heroe.id)"><fa-icon [icon]="faTrash" class="trash py-3 px-0 px-lg-3 rounded"></fa-icon></td>
+                <td [routerLink]="['/admin/heroes/update/', heroe.id]"><fa-icon [icon]="faPen" class="update py-3 px-0 px-lg-3 rounded"></fa-icon></td>
                 </tr>
               </tbody>
             </table>

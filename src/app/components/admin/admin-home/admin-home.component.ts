@@ -9,16 +9,20 @@ import { CitysService } from 'src/app/services/citys.service';
   styleUrls: ['./admin-home.component.css']
 })
 export class AdminHomeComponent implements OnInit {
-  citys: Citys[] = this.CitysService.citys;
+  citys !: Citys[];
   faTrash = faTrashCan;
   faPen = faPenToSquare;
   constructor(private CitysService : CitysService) { }
 
   ngOnInit(): void {
+    this.CitysService.findAllCitys().subscribe(data => {
+      this.citys = data;
+    })
   }
 
   deletecity(id ?: number){
-    this.CitysService.deleteCity(id);
-    this.citys = this.CitysService.citys;
+    this.CitysService.deleteCity(id).subscribe(data => {
+      this.ngOnInit();
+    });
   }
 }

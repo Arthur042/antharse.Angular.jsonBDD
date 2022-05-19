@@ -12,19 +12,22 @@ import { HeroesService } from 'src/app/services/heroes.service';
 export class AdminHeroeUpdateComponent implements OnInit {
 
   updateHeroe !: Heroes;
-  name !: string;
+  id !: number;
 
   constructor(private router : Router, private toastr: ToastrService, private HeroesService : HeroesService, private ActivatedRoute : ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.name = <string>this.ActivatedRoute.snapshot.paramMap.get('name');
-    this.updateHeroe = this.HeroesService.findByName(this.name);
+    this.id = parseInt(<string>this.ActivatedRoute.snapshot.paramMap.get('id'));
+    this.HeroesService.findById(this.id).subscribe(data => {
+      this.updateHeroe = data;
+    });
   }
 
   update(){
-    console.log(this.updateHeroe);
-    this.router.navigate(['/admin/heroes']);
-    this.toastr.success(`${this.updateHeroe.name} à été modifié avec succès`);
+    this.HeroesService.updateheroe(this.updateHeroe).subscribe(data => {
+      this.router.navigate(['/admin/heroes']);
+      this.toastr.success(`${this.updateHeroe.name} à été modifié avec succès`);
+    })
   }
 
 }

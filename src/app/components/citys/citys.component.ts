@@ -9,11 +9,14 @@ import { CitysService } from 'src/app/services/citys.service';
 })
 export class CitysComponent implements OnInit {
   @Input() theme !: string;
-  citys : Citys[] = this.CitysService.citys;
+  citys !: Citys[];
 
   constructor(private CitysService : CitysService) { }
 
   ngOnInit(): void {
+    this.CitysService.findAllCitys().subscribe(data => {
+      this.citys = data;
+    })
   }
 
 }
