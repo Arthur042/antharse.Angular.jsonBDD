@@ -27,8 +27,8 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
 
 
-##to execute correctly you need angular CLI 
+## To execute correctly you need angular CLI 
 
-execute commande          ng update
-then                      ng serve
-for the local server use  json-server --watch localBDD.json
+Execute commande          ng update
+Then                      ng serve
+For the local server use  json-server --watch localBDD.json
