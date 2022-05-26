@@ -29,6 +29,6 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## To execute correctly you need angular CLI 
 
-Execute commande npm install 
-# Then ng serve   
-# For the local server use  json-server --watch localBDD.json
+### Execute commande npm install 
+### Then ng serve   
+### For the local server use  json-server --watch localBDD.json
